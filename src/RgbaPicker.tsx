@@ -6,6 +6,7 @@ import "./assets/rgba-picker.css";
 
 export interface IRgbaProps {
   color: IColor;
+  onChange: (color: IColor) => any; 
 }
 
 export interface IColor {
@@ -43,7 +44,7 @@ export  class RgbaPicker extends React.Component<IRgbaProps, IRgbaState> {
       color: newColor
     });
 
-
+    this.props.onChange(this.state.color);
   }
 
 

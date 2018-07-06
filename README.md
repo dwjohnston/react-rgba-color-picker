@@ -12,7 +12,7 @@ Uses [react-compound-slider](https://www.npmjs.com/package/react-compound-slider
 ### Plain React
 ```
 import React, { Component } from 'react';
-import {RgbaPicker} from "rgba3";
+import {RgbaPicker} from "react-rgba-color-picker";
 
 
 class App extends Component {
