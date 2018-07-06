@@ -11,16 +11,24 @@ Uses [react-compound-slider](https://www.npmjs.com/package/react-compound-slider
 
 ### Plain React
 ```
-import React, { Component } from 'react';
-import {RgbaPicker} from "react-rgba-color-picker";
-
-
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      color: null
+    };
+  }
+
+  onChange = (c) => {
+    console.log(c);
+    this.setState({ color: c });
+  }
+
   render() {
     return (
       <div className="App">
-      <RgbaPicker color = {{r: 0, b: 255, g: 10, a: 1}}/> 
-
+        <RgbaPicker color={{ a: 1, b: 255, g: 10, r: 0 }} onChange={this.onChange} />
+        {JSON.stringify(this.state.color)}
       </div>
     );
   }

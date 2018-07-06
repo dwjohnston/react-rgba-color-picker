@@ -72,8 +72,6 @@ export class Slider extends React.Component<ISliderProps, any> {
                             return (
                                 <div className="slider-handles">
                                     {sliders.handles.map((handle: IHandle, i: number) => {
-
-                                        console.log(handle);
                                         return (
                                             <Handle
                                                 key={i}
