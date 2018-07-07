@@ -13,7 +13,12 @@ class App extends React.Component<any, IAppState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      color: null
+      color: {
+        a: 1,
+        b: 50,
+        g: 111,
+        r: 11
+     }
     };
   }
 
@@ -27,12 +32,7 @@ class App extends React.Component<any, IAppState> {
 
     return (
       <div className="App">
-        <RgbaPicker color={{
-          a: 1,
-          b: 50,
-          g: 111,
-          r: 11
-       }}
+        <RgbaPicker color={this.state.color}
        onChange = {
          this.onChange
        } />
