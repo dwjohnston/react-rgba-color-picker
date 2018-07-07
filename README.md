@@ -6,6 +6,10 @@ Uses sliders to pick the individual rgba values.
 
 Uses [react-compound-slider](https://www.npmjs.com/package/react-compound-slider) for the sliders. 
 
+## Styling
+
+Component can be styled by styling the `.rgba-picker` component and everything inside. 
+
 
 ## Usage
 
@@ -40,26 +44,51 @@ export default App;
 ### Typescript + React
 
 ```
-import * as React from 'react';
-import {IColor, RgbaPicker} from  "react-rgba-color-picker"; 
 
-class App extends React.Component {
- 
-  public favColor: IColor;
-  public render() {   
-    this.favColor = {
-      r: 11, 
-      g: 111, 
-      b: 50, 
-      a: 1
+import * as React from 'react';
+import { IColor, RgbaPicker } from "../src/RgbaPicker";
+
+interface IAppState {
+  color: IColor;
+}
+
+class App extends React.Component<any, IAppState> {
+
+  public state: IAppState;
+
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      color: null
     };
+  }
+
+  public onChange = (c: IColor) => {
+    this.setState({
+      color: c
+    });
+  }
+
+  public render() {
+
     return (
       <div className="App">
-          <RgbaPicker color = {this.favColor}/> 
+        <RgbaPicker color={{
+          a: 1,
+          b: 50,
+          g: 111,
+          r: 11
+       }}
+       onChange = {
+         this.onChange
+       } />
+
+        <p>{JSON.stringify(this.state.color)}</p>
       </div>
     );
   }
 }
 
 export default App;
+
 ```
