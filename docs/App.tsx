@@ -37,7 +37,7 @@ class App extends React.Component<any, IAppState> {
          this.onChange
        } />
 
-        {JSON.stringify(this.state.color)}
+        <p>{JSON.stringify(this.state.color)}</p>
       </div>
     );
   }
