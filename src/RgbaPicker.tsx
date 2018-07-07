@@ -50,21 +50,23 @@ export  class RgbaPicker extends React.Component<IRgbaProps, IRgbaState> {
 
 
   public render() {
+
+    const {color} = this.props; 
     return (
       <div className={`rgba-picker ${this.state.open ? 'open' : 'closed'}`}
       >
         <div className="sliders">
           <div>
-            <Slider min={0} max={255} step={1} initValue={0} changeEvent={this.handleChange} label="r" colorFn={this.rColorFn} />
+            <Slider min={0} max={255} step={1} initValue={color.r} changeEvent={this.handleChange} label="r" colorFn={this.rColorFn} />
           </div>
           <div>
-            <Slider min={0} max={255} step={1} initValue={10} changeEvent={this.handleChange} label="g" colorFn={this.gColorFn} />
+            <Slider min={0} max={255} step={1} initValue={color.g} changeEvent={this.handleChange} label="g" colorFn={this.gColorFn} />
           </div>
           <div>
-            <Slider min={0} max={255} step={1} initValue={100} changeEvent={this.handleChange} label="b" colorFn={this.bColorFn} />
+            <Slider min={0} max={255} step={1} initValue={color.b} changeEvent={this.handleChange} label="b" colorFn={this.bColorFn} />
           </div>
           <div>
-            <Slider min={0} max={1} step={0.01} initValue={0.5} changeEvent={this.handleChange} label="a" colorFn={this.aColorFn} />
+            <Slider min={0} max={1} step={0.01} initValue={color.a} changeEvent={this.handleChange} label="a" colorFn={this.aColorFn} />
           </div>
         </div>
 
