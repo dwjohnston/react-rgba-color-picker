@@ -14,6 +14,9 @@ Component can be styled by styling the `.rgba-picker` component and everything i
 
 
 ## Usage
+```
+npm install --save react-rgba-color-picker
+```
 
 ### Plain React
 ```
